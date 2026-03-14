@@ -1,0 +1,8 @@
+# Core dependencies for find_wait_head.py and find_wait_head_lib/
+torch>=2.1.0
+transformers>=4.51.0
+accelerate>=0.30.0
+tqdm>=4.66.0
+safetensors>=0.4.3
+sentencepiece>=0.2.0
+numpy>=1.24.0

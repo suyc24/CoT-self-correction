@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Local env/editor
+.venv/
+.vscode/
+.uv-cache/
+
+# Temporary outputs from smoke runs
+outputs/self_correction_parallel_smoke/
+outputs/self_correction_smoke_local/
+outputs/self_correction_smoke_local_fast/
+outputs/single_head_print_smoke/
