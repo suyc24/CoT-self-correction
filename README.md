@@ -82,6 +82,8 @@ In `--output_dir` (default `outputs/self_correction_full`):
   - per-example per-head wait-token logits (`baseline` vs `ablated`)
 - `head_wait_token_logit_ranking.csv`
   - head ranking by wait-token logit delta magnitude
+- `wait_logit_by_example/*.csv`
+  - one CSV per question (`example_id`), each containing all ablated heads for that question
 
 ## 5) Useful Arguments
 

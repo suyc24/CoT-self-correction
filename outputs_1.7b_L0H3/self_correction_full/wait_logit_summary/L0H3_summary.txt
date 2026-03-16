@@ -1,0 +1,11 @@
+L0H3 wait logit summary
+total_examples: 1319
+avg_logitbaseline_wait_token: 20.684684
+avg_logitablated_wait_token: 19.224141
+avg_delta_ablated_minus_baseline: -1.460542
+avg_abs_delta_ablated_minus_baseline: 4.379082
+wrong_count: 1224
+keep_wrong_count: 0
+other_answer_count: 219
+no_boxed_count: 1005
+note: wrong_count uses head_summary.csv; logit stats use gsm8k rows only.

@@ -1,0 +1,16 @@
+{
+  "head_label": "L0H3",
+  "num_wait_logit_rows": 1319,
+  "avg_logitbaseline_wait_token": 20.684683590788477,
+  "avg_logitablated_wait_token": 19.224141454226686,
+  "avg_delta_ablated_minus_baseline": -1.4605421365617892,
+  "avg_abs_delta_ablated_minus_baseline": 4.379082460670963,
+  "total_examples": 1319,
+  "corrected_count": 95,
+  "wrong_count": 1224,
+  "keep_wrong_count": 0,
+  "other_answer_count": 219,
+  "no_boxed_count": 1005,
+  "gsm8k_csv_dir": "outputs_1.7b_L0H3/self_correction_full/wait_logit_by_example/gsm8k",
+  "note": "wrong_count is computed from head_summary.csv; wait-logit statistics are computed on gsm8k rows only."
+}

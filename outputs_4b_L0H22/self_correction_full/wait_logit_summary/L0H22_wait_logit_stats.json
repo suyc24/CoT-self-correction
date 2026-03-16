@@ -1,0 +1,14 @@
+{
+  "head_label": "L0H22",
+  "num_wait_logit_rows": 1319,
+  "avg_logitbaseline_wait_token": 26.776458254359362,
+  "avg_logitablated_wait_token": 26.39467044162244,
+  "avg_delta_ablated_minus_baseline": -0.3817878127369219,
+  "total_examples": 1319,
+  "corrected_count": 1200,
+  "wrong_count": 119,
+  "keep_wrong_count": 33,
+  "other_answer_count": 66,
+  "no_boxed_count": 20,
+  "note": "wrong_count is computed from head_summary.csv because ablation_no_reflect_wrong_only.jsonl in this run is not a filtered wrong-only file."
+}

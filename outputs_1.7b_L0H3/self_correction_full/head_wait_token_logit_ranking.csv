@@ -1,0 +1,2 @@
+head_label,layer_idx,head_idx,count,mean_logit_baseline_wait,mean_logit_ablated_wait,mean_delta_ablated_minus_baseline,mean_abs_delta,max_abs_delta
+L0H3,0,3,1319,20.684684,19.224141,-1.460542,4.379082,20.695312

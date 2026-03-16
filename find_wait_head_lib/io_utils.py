@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
@@ -104,6 +105,8 @@ def write_summary_csv(
     def sort_key(x: Dict[str, Any]) -> Tuple[int, int, int]:
         if x["head_label"] == "baseline":
             return (-1, -1, -1)
+        if x["layer_idx"] == "" or x["head_idx"] == "":
+            return (1, 10**9, 10**9)
         return (0, int(x["layer_idx"]), int(x["head_idx"]))
 
     rows.sort(key=sort_key)
@@ -184,7 +187,7 @@ def split_head_labels_round_robin(head_labels: List[str], num_buckets: int) -> L
 
 def should_keep_filtered_row(row: Dict[str, Any]) -> bool:
     return (
-        row["condition"] == "single_head_ablation"
+        row["condition"] in {"single_head_ablation", "multi_head_joint_ablation"}
         and row["outcome"] != "corrected"
     )
 
@@ -327,3 +330,44 @@ def write_wait_logit_ranking_csv(
         )
         writer.writeheader()
         writer.writerows(rows)
+
+
+def write_wait_logit_per_example_csvs(
+    wait_logit_jsonl_path: Path,
+    output_dir: Path,
+) -> int:
+    if not wait_logit_jsonl_path.exists():
+        return 0
+
+    grouped: Dict[str, List[Dict[str, Any]]] = {}
+    with open(wait_logit_jsonl_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            key = str(row.get("example_id", "unknown"))
+            grouped.setdefault(key, []).append(row)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    fieldnames = [
+        "example_id",
+        "head_label",
+        "layer_idx",
+        "head_idx",
+        "logitbaseline_wait_token",
+        "logitablated_wait_token",
+        "delta_ablated_minus_baseline",
+    ]
+    written = 0
+    for example_id, rows in grouped.items():
+        safe_id = re.sub(r"[^0-9A-Za-z._-]+", "_", str(example_id)).strip("_")
+        if not safe_id:
+            safe_id = "unknown"
+        path = output_dir / f"{safe_id}.csv"
+        with open(path, "w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in rows:
+                writer.writerow({k: row.get(k) for k in fieldnames})
+        written += 1
+    return written

@@ -1,0 +1,10 @@
+L0H22 wait logit summary
+total_examples: 1319
+avg_logitbaseline_wait_token: 26.776458
+avg_logitablated_wait_token: 26.394670
+avg_delta_ablated_minus_baseline: -0.381788
+wrong_count: 119
+keep_wrong_count: 33
+other_answer_count: 66
+no_boxed_count: 20
+note: wrong_count uses head_summary.csv.

@@ -1,0 +1,3 @@
+head_label,layer_idx,head_idx,total,corrected,keep_wrong,other_answer,no_boxed,keyword_hit,corrected_rate,keep_wrong_rate,keyword_hit_rate,delta_corrected_rate_vs_baseline
+baseline,,,1319,1157,34,122,6,1313,0.87718,0.025777,0.995451,0.0
+L0H3,0,3,1319,95,0,219,1005,523,0.072024,0.0,0.396513,-0.805155

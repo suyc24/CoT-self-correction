@@ -7,18 +7,112 @@ from typing import Any, Dict, List
 
 import torch
 
-from .ablation import SingleHeadAblationHook, list_all_heads
+from .ablation import MultiHeadAblationHookSet, SingleHeadAblationHook, list_all_heads
 from .io_utils import (
     build_export_row,
     init_summary_entry,
     init_wait_logit_entry,
+    load_jsonl,
     load_prepared_examples,
     should_keep_filtered_row,
     update_wait_logit_stats,
     update_summary,
 )
 from .model_utils import generate_continuation, get_next_token_logit, load_model_with_retries
-from .pipeline import analyze_generation
+from .pipeline import analyze_generation, prepare_example_prefix
+
+
+def run_prepare_and_baseline_worker(
+    worker_id: int,
+    gpu_id: int,
+    examples_jsonl_path: str,
+    args_dict: Dict[str, Any],
+    keywords: List[str],
+    worker_prepared_output_path: str,
+    worker_baseline_output_path: str,
+    wait_token_id: int,
+) -> Dict[str, Any]:
+    if torch.cuda.is_available():
+        torch.cuda.set_device(gpu_id)
+
+    args = argparse.Namespace(**args_dict)
+    device_map_override = {"": gpu_id}
+    model, tokenizer, _, _ = load_model_with_retries(
+        args,
+        device_map_override=device_map_override,
+        log_prefix=f"[PrepWorker {worker_id} GPU{gpu_id}]",
+    )
+    examples = load_jsonl(examples_jsonl_path)
+
+    stats: Dict[str, Dict[str, Any]] = defaultdict(init_summary_entry)
+    prepared_count = 0
+    skipped_count = 0
+
+    with open(worker_prepared_output_path, "w", encoding="utf-8") as prepared_f, open(
+        worker_baseline_output_path, "w", encoding="utf-8"
+    ) as baseline_f:
+        for ex in examples:
+            prep_info = prepare_example_prefix(
+                model=model,
+                tokenizer=tokenizer,
+                example=ex,
+                args=args,
+            )
+            if not prep_info.get("ok", False):
+                skipped_count += 1
+                continue
+
+            prepared_count += 1
+            prepared_f.write(json.dumps({"example": ex, "prep_info": prep_info}, ensure_ascii=False) + "\n")
+
+            baseline_wait_logit = get_next_token_logit(
+                model=model,
+                tokenizer=tokenizer,
+                prompt_prefix=prep_info["tampered_prefix"],
+                target_token_id=wait_token_id,
+            )
+            continuation, full_text, gen_tokens = generate_continuation(
+                model=model,
+                tokenizer=tokenizer,
+                prompt_prefix=prep_info["tampered_prefix"],
+                max_new_tokens=args.max_new_tokens,
+                do_sample=args.do_sample,
+                temperature=args.temperature,
+                top_p=args.top_p,
+            )
+            row = analyze_generation(
+                example=ex,
+                prep_info=prep_info,
+                condition="baseline",
+                continuation=continuation,
+                full_text=full_text,
+                generated_tokens=gen_tokens,
+                keywords=keywords,
+                head=None,
+                hook=None,
+            )
+            update_summary(stats, row)
+            baseline_f.write(
+                json.dumps(
+                    {
+                        "example_id": str(ex["id"]),
+                        "baseline_wait_logit": float(baseline_wait_logit),
+                        "baseline_row": row,
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+
+    return {
+        "worker_id": worker_id,
+        "gpu_id": gpu_id,
+        "stats": dict(stats),
+        "prepared_count": prepared_count,
+        "skipped_count": skipped_count,
+        "worker_prepared_output_path": worker_prepared_output_path,
+        "worker_baseline_output_path": worker_baseline_output_path,
+    }
 
 
 def run_ablation_worker(
@@ -55,30 +149,22 @@ def run_ablation_worker(
     with open(worker_output_path, "w", encoding="utf-8") as raw_f, open(
         worker_wait_logit_path, "w", encoding="utf-8"
     ) as wait_f:
-        for head_label in head_labels:
-            if head_label not in head_lookup:
-                raise ValueError(f"Worker {worker_id}: head {head_label} not found.")
-            head = head_lookup[head_label]
-            attn_module = attn_modules[head.layer_idx]
+        if args.joint_ablation:
+            joint_heads = []
+            for head_label in head_labels:
+                if head_label not in head_lookup:
+                    raise ValueError(f"Worker {worker_id}: head {head_label} not found.")
+                joint_heads.append(head_lookup[head_label])
+            joint_head_label = "JOINT[" + ",".join(h.label for h in joint_heads) + "]"
             for ex, prep_info in prepared_examples:
-                with SingleHeadAblationHook(
-                    attn_module=attn_module,
-                    head_idx=head.head_idx,
-                    num_heads=head.num_heads,
-                    head_dim=head.head_dim,
-                ):
+                with MultiHeadAblationHookSet(attn_modules=attn_modules, heads=joint_heads):
                     ablated_wait_logit = get_next_token_logit(
                         model=model,
                         tokenizer=tokenizer,
                         prompt_prefix=prep_info["tampered_prefix"],
                         target_token_id=wait_token_id,
                     )
-                with SingleHeadAblationHook(
-                    attn_module=attn_module,
-                    head_idx=head.head_idx,
-                    num_heads=head.num_heads,
-                    head_dim=head.head_dim,
-                ) as hook:
+                with MultiHeadAblationHookSet(attn_modules=attn_modules, heads=joint_heads):
                     continuation, full_text, gen_tokens = generate_continuation(
                         model=model,
                         tokenizer=tokenizer,
@@ -92,24 +178,29 @@ def run_ablation_worker(
                 row = analyze_generation(
                     example=ex,
                     prep_info=prep_info,
-                    condition="single_head_ablation",
+                    condition="multi_head_joint_ablation",
                     continuation=continuation,
                     full_text=full_text,
                     generated_tokens=gen_tokens,
                     keywords=keywords,
-                    head=head,
-                    hook=hook,
+                    head=None,
+                    hook=None,
                 )
+                row["head_label"] = joint_head_label
+                row["layer_idx"] = None
+                row["head_idx"] = None
                 update_summary(stats, row)
+
                 baseline_wait_logit = float(baseline_wait_logits[str(ex["id"])])
-                update_wait_logit_stats(wait_logit_stats, head.label, baseline_wait_logit, ablated_wait_logit)
+                update_wait_logit_stats(wait_logit_stats, joint_head_label, baseline_wait_logit, ablated_wait_logit)
                 wait_f.write(
                     json.dumps(
                         {
                             "example_id": ex["id"],
-                            "head_label": head.label,
-                            "layer_idx": head.layer_idx,
-                            "head_idx": head.head_idx,
+                            "head_label": joint_head_label,
+                            "layer_idx": None,
+                            "head_idx": None,
+                            "ablated_heads": [h.label for h in joint_heads],
                             "logitbaseline_wait_token": baseline_wait_logit,
                             "logitablated_wait_token": ablated_wait_logit,
                             "delta_ablated_minus_baseline": float(ablated_wait_logit - baseline_wait_logit),
@@ -121,6 +212,73 @@ def run_ablation_worker(
                 if should_keep_filtered_row(row):
                     raw_f.write(json.dumps(build_export_row(row), ensure_ascii=False) + "\n")
                     kept_rows += 1
+        else:
+            for head_label in head_labels:
+                if head_label not in head_lookup:
+                    raise ValueError(f"Worker {worker_id}: head {head_label} not found.")
+                head = head_lookup[head_label]
+                attn_module = attn_modules[head.layer_idx]
+                for ex, prep_info in prepared_examples:
+                    with SingleHeadAblationHook(
+                        attn_module=attn_module,
+                        head_idx=head.head_idx,
+                        num_heads=head.num_heads,
+                        head_dim=head.head_dim,
+                    ):
+                        ablated_wait_logit = get_next_token_logit(
+                            model=model,
+                            tokenizer=tokenizer,
+                            prompt_prefix=prep_info["tampered_prefix"],
+                            target_token_id=wait_token_id,
+                        )
+                    with SingleHeadAblationHook(
+                        attn_module=attn_module,
+                        head_idx=head.head_idx,
+                        num_heads=head.num_heads,
+                        head_dim=head.head_dim,
+                    ) as hook:
+                        continuation, full_text, gen_tokens = generate_continuation(
+                            model=model,
+                            tokenizer=tokenizer,
+                            prompt_prefix=prep_info["tampered_prefix"],
+                            max_new_tokens=args.max_new_tokens,
+                            do_sample=args.do_sample,
+                            temperature=args.temperature,
+                            top_p=args.top_p,
+                        )
+
+                    row = analyze_generation(
+                        example=ex,
+                        prep_info=prep_info,
+                        condition="single_head_ablation",
+                        continuation=continuation,
+                        full_text=full_text,
+                        generated_tokens=gen_tokens,
+                        keywords=keywords,
+                        head=head,
+                        hook=hook,
+                    )
+                    update_summary(stats, row)
+                    baseline_wait_logit = float(baseline_wait_logits[str(ex["id"])])
+                    update_wait_logit_stats(wait_logit_stats, head.label, baseline_wait_logit, ablated_wait_logit)
+                    wait_f.write(
+                        json.dumps(
+                            {
+                                "example_id": ex["id"],
+                                "head_label": head.label,
+                                "layer_idx": head.layer_idx,
+                                "head_idx": head.head_idx,
+                                "logitbaseline_wait_token": baseline_wait_logit,
+                                "logitablated_wait_token": ablated_wait_logit,
+                                "delta_ablated_minus_baseline": float(ablated_wait_logit - baseline_wait_logit),
+                            },
+                            ensure_ascii=False,
+                        )
+                        + "\n"
+                    )
+                    if should_keep_filtered_row(row):
+                        raw_f.write(json.dumps(build_export_row(row), ensure_ascii=False) + "\n")
+                        kept_rows += 1
 
     return {
         "worker_id": worker_id,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import re
+from contextlib import ExitStack
 from dataclasses import dataclass
 from typing import Any, List, Optional, Tuple
 
@@ -77,6 +78,36 @@ class SingleHeadAblationHook:
         if len(args) == 1:
             return (x_masked,)
         return (x_masked, *args[1:])
+
+
+class MultiHeadAblationHookSet:
+    """Enable multiple SingleHeadAblationHook instances at the same time."""
+
+    def __init__(self, attn_modules: List[torch.nn.Module], heads: List[HeadSpec]) -> None:
+        self.attn_modules = attn_modules
+        self.heads = heads
+        self._stack: Optional[ExitStack] = None
+        self.hooks: List[SingleHeadAblationHook] = []
+
+    def __enter__(self) -> "MultiHeadAblationHookSet":
+        stack = ExitStack()
+        self.hooks = []
+        for head in self.heads:
+            hook = SingleHeadAblationHook(
+                attn_module=self.attn_modules[head.layer_idx],
+                head_idx=head.head_idx,
+                num_heads=head.num_heads,
+                head_dim=head.head_dim,
+            )
+            stack.enter_context(hook)
+            self.hooks.append(hook)
+        self._stack = stack
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback) -> None:
+        if self._stack is not None:
+            self._stack.close()
+            self._stack = None
 
 
 def get_nested_attr(obj: Any, path: str) -> Any:
