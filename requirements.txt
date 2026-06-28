@@ -1,4 +1,4 @@
-# Core dependencies for find_wait_head.py and find_wait_head_lib/
+# Core dependencies for find_wait_head.py and cot_research/
 torch>=2.1.0
 transformers>=4.51.0
 accelerate>=0.30.0
@@ -6,3 +6,8 @@ tqdm>=4.66.0
 safetensors>=0.4.3
 sentencepiece>=0.2.0
 numpy>=1.24.0
+regex>=2024.0.0
+word2number>=1.1
+sympy>=1.12
+latex2sympy2>=1.9.1
+antlr4-python3-runtime>=4.7.2

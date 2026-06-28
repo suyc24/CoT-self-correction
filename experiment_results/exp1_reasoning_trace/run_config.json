@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "num_samples": 10,
+  "temperature": 0.7,
+  "max_tokens": 4096,
+  "num_problems": 20,
+  "timestamp": "2026-06-26 22:51:47"
+}

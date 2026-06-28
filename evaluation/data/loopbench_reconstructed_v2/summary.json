@@ -1,0 +1,49 @@
+{
+  "benchmark_name": "loopbench_reconstructed",
+  "construction_note": "Paper-faithful reconstruction of LoopBench based on Table 4 task formulations, Table 5 representative instances, Appendix A filtering criteria, and the public implementation details from arXiv:2601.05693. The original 700 GPT-5-synthesized prompts are not public; this dataset reconstructs the same task families rather than claiming byte-level recovery of the authors' hidden prompts.",
+  "paper_reference": {
+    "arxiv_id": "2601.05693",
+    "url": "https://arxiv.org/abs/2601.05693"
+  },
+  "public_prompt_fragment": "You are a meticulous, conscientious, and by-the-book {role} who must present, step by step, without skipping any steps or omitting any intermediate quantities, the derivation and update of each digit/step.",
+  "reconstructed_system_prompt": "You are a meticulous, conscientious, and by-the-book reasoner who must present, step by step, without skipping any steps or omitting any intermediate quantities, the derivation and update of each digit, state transition, recursive move, or logical elimination before giving the final answer.",
+  "paper_baseline_decoding": {
+    "setting_name": "conservative",
+    "temperature": 0.1,
+    "top_k": 5,
+    "top_p": 0.95,
+    "repetition_penalty": 1.1
+  },
+  "total_examples": 700,
+  "solver_status_counts": {
+    "prompt_family_reconstruction_only": 100,
+    "table5_anchor_prompt_only": 1,
+    "validated": 599
+  },
+  "category_counts": {
+    "complex_recursive_reasoning": 400,
+    "high_precision_arithmetic": 300
+  },
+  "subtask_counts": {
+    "logical_paradox": 100,
+    "long_division": 100,
+    "newtons_iteration": 100,
+    "path_planning": 100,
+    "square_root": 100,
+    "tower_of_hanoi": 100,
+    "truth_teller_puzzles": 100
+  },
+  "taxonomy": {
+    "high_precision_arithmetic": [
+      "square_root",
+      "long_division",
+      "newtons_iteration"
+    ],
+    "complex_recursive_reasoning": [
+      "truth_teller_puzzles",
+      "logical_paradox",
+      "tower_of_hanoi",
+      "path_planning"
+    ]
+  }
+}

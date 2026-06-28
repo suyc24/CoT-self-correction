@@ -39,15 +39,27 @@ from typing import Any, Dict, List, Optional, Tuple
 import torch
 from tqdm import tqdm
 
-from find_wait_head_lib.ablation import (
+from cot_research.head_ablation import (
     MultiHeadAblationHookSet,
     SingleHeadAblationHook,
     filter_heads,
     list_all_heads,
     parse_head_label,
 )
-from find_wait_head_lib.constants import ABLATION_POSITION, DEFAULT_KEYWORDS
-from find_wait_head_lib.io_utils import (
+from cot_research.model_utils import (
+    generate_continuation,
+    get_next_token_logit,
+    load_model_with_retries,
+    resolve_target_token_id,
+)
+from cot_research.self_correction import (
+    ABLATION_POSITION,
+    DEFAULT_KEYWORDS,
+    analyze_generation,
+    parse_keywords,
+    prepare_example_prefix,
+)
+from cot_research.self_correction_io import (
     build_export_row,
     dump_prepared_examples,
     ensure_required_fields,
@@ -67,15 +79,7 @@ from find_wait_head_lib.io_utils import (
     write_wait_logit_ranking_csv,
     write_summary_csv,
 )
-from find_wait_head_lib.model_utils import (
-    generate_continuation,
-    get_next_token_logit,
-    load_model_with_retries,
-    resolve_target_token_id,
-)
-from find_wait_head_lib.parallel_utils import run_ablation_worker, run_prepare_and_baseline_worker
-from find_wait_head_lib.pipeline import analyze_generation, prepare_example_prefix
-from find_wait_head_lib.text_utils import parse_keywords
+from cot_research.self_correction_parallel import run_ablation_worker, run_prepare_and_baseline_worker
 
 
 def parse_args() -> argparse.Namespace:

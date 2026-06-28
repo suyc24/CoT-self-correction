@@ -1,0 +1,802 @@
+[
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 9,
+    "think_length": 5045,
+    "umap_x": 3.9462361335754395,
+    "umap_y": 9.769339561462402
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 9,
+    "think_length": 5045,
+    "umap_x": 4.867106914520264,
+    "umap_y": 9.62359619140625
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 9,
+    "think_length": 5045,
+    "umap_x": 2.1579723358154297,
+    "umap_y": 8.487714767456055
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 9,
+    "think_length": 5045,
+    "umap_x": 1.923707365989685,
+    "umap_y": 9.016155242919922
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 2,
+    "think_length": 1267,
+    "umap_x": 4.406000137329102,
+    "umap_y": 10.959240913391113
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 2,
+    "think_length": 1267,
+    "umap_x": 3.556040048599243,
+    "umap_y": 8.75062370300293
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 2,
+    "think_length": 1267,
+    "umap_x": 5.208151340484619,
+    "umap_y": 9.925200462341309
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 2,
+    "think_length": 1267,
+    "umap_x": 4.1327996253967285,
+    "umap_y": 10.853508949279785
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 4,
+    "think_length": 1405,
+    "umap_x": 3.13253116607666,
+    "umap_y": 7.3668060302734375
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 4,
+    "think_length": 1405,
+    "umap_x": 4.243465423583984,
+    "umap_y": 10.198415756225586
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 4,
+    "think_length": 1405,
+    "umap_x": 4.959855079650879,
+    "umap_y": 9.063241958618164
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 4,
+    "think_length": 1405,
+    "umap_x": 2.6821775436401367,
+    "umap_y": 9.243767738342285
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 3,
+    "think_length": 923,
+    "umap_x": 4.353453636169434,
+    "umap_y": 10.610928535461426
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 3,
+    "think_length": 923,
+    "umap_x": 4.651362895965576,
+    "umap_y": 10.788935661315918
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 3,
+    "think_length": 923,
+    "umap_x": 4.295252799987793,
+    "umap_y": 9.208971977233887
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 3,
+    "think_length": 923,
+    "umap_x": 5.123775005340576,
+    "umap_y": 10.461973190307617
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 6,
+    "think_length": 2470,
+    "umap_x": 4.0066118240356445,
+    "umap_y": 9.011878967285156
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 6,
+    "think_length": 2470,
+    "umap_x": 3.8308653831481934,
+    "umap_y": 8.396162033081055
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 6,
+    "think_length": 2470,
+    "umap_x": 3.942391872406006,
+    "umap_y": 7.865629196166992
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 6,
+    "think_length": 2470,
+    "umap_x": 3.22948956489563,
+    "umap_y": 8.167540550231934
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 4,
+    "think_length": 1304,
+    "umap_x": 3.257096290588379,
+    "umap_y": 8.700715065002441
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 4,
+    "think_length": 1304,
+    "umap_x": 4.48516845703125,
+    "umap_y": 9.809518814086914
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 4,
+    "think_length": 1304,
+    "umap_x": 5.34442138671875,
+    "umap_y": 10.712504386901855
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 4,
+    "think_length": 1304,
+    "umap_x": 2.6991703510284424,
+    "umap_y": 7.967458724975586
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 3.597822427749634,
+    "umap_y": 9.031004905700684
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 4.826905250549316,
+    "umap_y": 10.286942481994629
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 4.981104850769043,
+    "umap_y": 9.81702995300293
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 1.4215896129608154,
+    "umap_y": 9.427945137023926
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 4.394939422607422,
+    "umap_y": 9.876160621643066
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 4.264410495758057,
+    "umap_y": 9.70921516418457
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 4.9784674644470215,
+    "umap_y": 9.148658752441406
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "umap_x": 2.2678141593933105,
+    "umap_y": 9.059139251708984
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 4,
+    "think_length": 1497,
+    "umap_x": 3.364713191986084,
+    "umap_y": 9.069892883300781
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 4,
+    "think_length": 1497,
+    "umap_x": 5.2635416984558105,
+    "umap_y": 9.422783851623535
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 4,
+    "think_length": 1497,
+    "umap_x": 3.5313010215759277,
+    "umap_y": 11.141729354858398
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 4,
+    "think_length": 1497,
+    "umap_x": 2.207841634750366,
+    "umap_y": 9.396778106689453
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 4,
+    "think_length": 1220,
+    "umap_x": 2.9081344604492188,
+    "umap_y": 8.934804916381836
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 4,
+    "think_length": 1220,
+    "umap_x": 5.163743495941162,
+    "umap_y": 10.494881629943848
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 4,
+    "think_length": 1220,
+    "umap_x": 5.361691474914551,
+    "umap_y": 9.527697563171387
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 4,
+    "think_length": 1220,
+    "umap_x": 3.083277940750122,
+    "umap_y": 8.010185241699219
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 10,
+    "think_length": 3448,
+    "umap_x": 2.956768274307251,
+    "umap_y": 10.557530403137207
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 10,
+    "think_length": 3448,
+    "umap_x": 3.226348638534546,
+    "umap_y": 7.188931941986084
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 10,
+    "think_length": 3448,
+    "umap_x": 5.522584915161133,
+    "umap_y": 8.687525749206543
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 10,
+    "think_length": 3448,
+    "umap_x": 1.4762946367263794,
+    "umap_y": 9.593792915344238
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 5,
+    "think_length": 2364,
+    "umap_x": 4.4746222496032715,
+    "umap_y": 8.865854263305664
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 5,
+    "think_length": 2364,
+    "umap_x": 2.544429063796997,
+    "umap_y": 10.352060317993164
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 5,
+    "think_length": 2364,
+    "umap_x": 1.9441871643066406,
+    "umap_y": 7.989943981170654
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 5,
+    "think_length": 2364,
+    "umap_x": 5.312358856201172,
+    "umap_y": 8.463532447814941
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 6,
+    "think_length": 3351,
+    "umap_x": 3.85534405708313,
+    "umap_y": 11.546802520751953
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 6,
+    "think_length": 3351,
+    "umap_x": 4.093175411224365,
+    "umap_y": 11.743046760559082
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 6,
+    "think_length": 3351,
+    "umap_x": 3.769376516342163,
+    "umap_y": 11.468579292297363
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 6,
+    "think_length": 3351,
+    "umap_x": 2.230457067489624,
+    "umap_y": 10.039815902709961
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 7,
+    "think_length": 3500,
+    "umap_x": 5.797872543334961,
+    "umap_y": 9.213570594787598
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 7,
+    "think_length": 3500,
+    "umap_x": 3.9618711471557617,
+    "umap_y": 11.642334938049316
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 7,
+    "think_length": 3500,
+    "umap_x": 5.756150245666504,
+    "umap_y": 9.070452690124512
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 7,
+    "think_length": 3500,
+    "umap_x": 1.8626759052276611,
+    "umap_y": 9.356331825256348
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 8,
+    "think_length": 2537,
+    "umap_x": 3.470830202102661,
+    "umap_y": 11.37993049621582
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 8,
+    "think_length": 2537,
+    "umap_x": 3.459066390991211,
+    "umap_y": 7.135869979858398
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 8,
+    "think_length": 2537,
+    "umap_x": 4.267142295837402,
+    "umap_y": 7.820699691772461
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 8,
+    "think_length": 2537,
+    "umap_x": 3.6176300048828125,
+    "umap_y": 7.772521495819092
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 10,
+    "think_length": 3026,
+    "umap_x": 2.9913899898529053,
+    "umap_y": 10.956503868103027
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 10,
+    "think_length": 3026,
+    "umap_x": 5.1806721687316895,
+    "umap_y": 8.585847854614258
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 10,
+    "think_length": 3026,
+    "umap_x": 4.16335391998291,
+    "umap_y": 7.559511184692383
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 10,
+    "think_length": 3026,
+    "umap_x": 1.3050816059112549,
+    "umap_y": 9.608699798583984
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 5,
+    "think_length": 2595,
+    "umap_x": 4.589133262634277,
+    "umap_y": 8.486580848693848
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 5,
+    "think_length": 2595,
+    "umap_x": 4.102431297302246,
+    "umap_y": 8.59669303894043
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 5,
+    "think_length": 2595,
+    "umap_x": 3.1743366718292236,
+    "umap_y": 6.938451766967773
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 5,
+    "think_length": 2595,
+    "umap_x": 1.5656641721725464,
+    "umap_y": 9.690515518188477
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 13,
+    "think_length": 3553,
+    "umap_x": 3.2516040802001953,
+    "umap_y": 10.247899055480957
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 13,
+    "think_length": 3553,
+    "umap_x": 4.143921852111816,
+    "umap_y": 7.949930191040039
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 13,
+    "think_length": 3553,
+    "umap_x": 2.076417922973633,
+    "umap_y": 8.152992248535156
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 13,
+    "think_length": 3553,
+    "umap_x": 1.6850906610488892,
+    "umap_y": 8.36166000366211
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 9,
+    "think_length": 3433,
+    "umap_x": 3.0901780128479004,
+    "umap_y": 10.173554420471191
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 9,
+    "think_length": 3433,
+    "umap_x": 4.17070198059082,
+    "umap_y": 8.63757038116455
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 9,
+    "think_length": 3433,
+    "umap_x": 3.9932467937469482,
+    "umap_y": 7.321206092834473
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 9,
+    "think_length": 3433,
+    "umap_x": 2.5697405338287354,
+    "umap_y": 7.608269214630127
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_10",
+    "reflection_count": 6,
+    "think_length": 3381,
+    "umap_x": 5.615281105041504,
+    "umap_y": 9.299261093139648
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_30",
+    "reflection_count": 6,
+    "think_length": 3381,
+    "umap_x": 4.459927558898926,
+    "umap_y": 7.541669845581055
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_50",
+    "reflection_count": 6,
+    "think_length": 3381,
+    "umap_x": 2.14298415184021,
+    "umap_y": 7.732009410858154
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "pct": "pct_95",
+    "reflection_count": 6,
+    "think_length": 3381,
+    "umap_x": 1.5300804376602173,
+    "umap_y": 8.091446876525879
+  }
+]

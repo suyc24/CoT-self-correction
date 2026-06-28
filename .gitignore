@@ -13,3 +13,24 @@ outputs/self_correction_parallel_smoke/
 outputs/self_correction_smoke_local/
 outputs/self_correction_smoke_local_fast/
 outputs/single_head_print_smoke/
+
+# Large experiment data (historical phases)
+experiment_results/experiments/
+experiment_results/local_current/
+experiment_results/reports/
+
+# Temporary launch scripts
+.tmp_*
+
+# Codex config
+.codex/
+
+# Logs and sync
+logs/
+rsync/
+
+# Session state (ephemeral)
+SESSION_STATE.md
+
+# Large data files
+*.tar.gz

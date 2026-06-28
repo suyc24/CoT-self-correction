@@ -1,0 +1,329 @@
+{
+  "total_samples": 200,
+  "total_problems": 20,
+  "overall_accuracy": 0.745,
+  "reflection_rate": 1.0,
+  "mean_reflection_count": 16.88,
+  "transition_counts": {
+    "reflection_no_prior_answer": 200
+  },
+  "by_difficulty": {
+    "easy": {
+      "count": 70,
+      "accuracy": 0.8714285714285714,
+      "reflection_rate": 1.0,
+      "mean_reflection_count": 8.314285714285715,
+      "transition_counts": {
+        "reflection_no_prior_answer": 70
+      }
+    },
+    "medium": {
+      "count": 70,
+      "accuracy": 0.9571428571428572,
+      "reflection_rate": 1.0,
+      "mean_reflection_count": 13.32857142857143,
+      "transition_counts": {
+        "reflection_no_prior_answer": 70
+      }
+    },
+    "hard": {
+      "count": 60,
+      "accuracy": 0.35,
+      "reflection_rate": 1.0,
+      "mean_reflection_count": 31.016666666666666,
+      "transition_counts": {
+        "reflection_no_prior_answer": 60
+      }
+    }
+  },
+  "interesting_case_counts": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "direct_correct_no_reflection": 0,
+    "loops_back": 0,
+    "many_reflections": 167,
+    "anomalous": 0
+  },
+  "per_problem_reports": [
+    {
+      "problem_id": "easy_01",
+      "difficulty": "easy",
+      "question": "Natalia sold clips to 48 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May?",
+      "correct_answer": "72",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 1772.3,
+      "mean_reflection_count": 4.2
+    },
+    {
+      "problem_id": "easy_02",
+      "difficulty": "easy",
+      "question": "Weng earns $12 an hour for babysitting. Yesterday, she just did 50 minutes of babysitting. How much did she earn?",
+      "correct_answer": "10",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 3118.8,
+      "mean_reflection_count": 7.9
+    },
+    {
+      "problem_id": "easy_03",
+      "difficulty": "easy",
+      "question": "Betty is saving money for a new wallet which costs $100. Betty has only half of the money she needs. Her parents decided to give her $15 for that purpose, and her grandparents twice as much as her parents. How much more money does Betty need to make?",
+      "correct_answer": "5",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 1745.7,
+      "mean_reflection_count": 4.3
+    },
+    {
+      "problem_id": "easy_04",
+      "difficulty": "easy",
+      "question": "A robe takes 2 bolts of blue fiber and half that much white fiber. How many bolts in total does it take?",
+      "correct_answer": "3",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 2932.1,
+      "mean_reflection_count": 4.8
+    },
+    {
+      "problem_id": "easy_05",
+      "difficulty": "easy",
+      "question": "James writes a 3-page letter to 2 different friends twice a week. How many pages does he write a year?",
+      "correct_answer": "624",
+      "num_samples": 10,
+      "num_correct": 1,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 14914.4,
+      "mean_reflection_count": 18.5
+    },
+    {
+      "problem_id": "easy_06",
+      "difficulty": "easy",
+      "question": "Every day, Wendi feeds each of her 6 chickens 3 cups of mixed bird feed. She gives the chickens their feed in 2 separate meals. In the morning, she gives them 15 cups and in the afternoon she gives them another amount. How many cups does she need to give in the afternoon?",
+      "correct_answer": "3",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 7118.9,
+      "mean_reflection_count": 15.0
+    },
+    {
+      "problem_id": "easy_07",
+      "difficulty": "easy",
+      "question": "There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be 21 trees. How many trees did the grove workers plant today?",
+      "correct_answer": "6",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 2196.1,
+      "mean_reflection_count": 3.5
+    },
+    {
+      "problem_id": "med_01",
+      "difficulty": "medium",
+      "question": "Find the sum of all values of $x$ such that $|2x - 6| = 10$.",
+      "correct_answer": "6",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 5743.9,
+      "mean_reflection_count": 11.3
+    },
+    {
+      "problem_id": "med_02",
+      "difficulty": "medium",
+      "question": "How many positive divisors does 360 have?",
+      "correct_answer": "24",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 5644.2,
+      "mean_reflection_count": 10.3
+    },
+    {
+      "problem_id": "med_03",
+      "difficulty": "medium",
+      "question": "What is the remainder when $3^{100}$ is divided by 5?",
+      "correct_answer": "1",
+      "num_samples": 10,
+      "num_correct": 9,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 6998.3,
+      "mean_reflection_count": 12.4
+    },
+    {
+      "problem_id": "med_04",
+      "difficulty": "medium",
+      "question": "If $x + y = 10$ and $xy = 21$, find $x^2 + y^2$.",
+      "correct_answer": "58",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 2812.5,
+      "mean_reflection_count": 6.8
+    },
+    {
+      "problem_id": "med_05",
+      "difficulty": "medium",
+      "question": "Compute $\\dbinom{10}{3}$.",
+      "correct_answer": "120",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 7510.7,
+      "mean_reflection_count": 14.7
+    },
+    {
+      "problem_id": "med_06",
+      "difficulty": "medium",
+      "question": "What is the greatest common divisor of $5!$ and $\\frac{8!}{3!}$?",
+      "correct_answer": "120",
+      "num_samples": 10,
+      "num_correct": 8,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 6617.7,
+      "mean_reflection_count": 19.5
+    },
+    {
+      "problem_id": "med_07",
+      "difficulty": "medium",
+      "question": "Find the arithmetic mean of the prime numbers in the list: 21, 23, 25, 27, 29.",
+      "correct_answer": "26",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 3729.6,
+      "mean_reflection_count": 18.3
+    },
+    {
+      "problem_id": "hard_01",
+      "difficulty": "hard",
+      "question": "In triangle $ABC$, $AB = 13$, $BC = 14$, and $CA = 15$. Find the area of triangle $ABC$.",
+      "correct_answer": "84",
+      "num_samples": 10,
+      "num_correct": 10,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 6601.5,
+      "mean_reflection_count": 13.9
+    },
+    {
+      "problem_id": "hard_02",
+      "difficulty": "hard",
+      "question": "How many 4-element subsets of $\\{1, 2, 3, 4, 5, 6, 7, 8, 9\\}$ have the property that no two elements are consecutive?",
+      "correct_answer": "15",
+      "num_samples": 10,
+      "num_correct": 1,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 12979.7,
+      "mean_reflection_count": 37.8
+    },
+    {
+      "problem_id": "hard_03",
+      "difficulty": "hard",
+      "question": "Let $S = \\sum_{k=1}^{100} \\lfloor \\sqrt{k} \\rfloor$. Compute $S$.",
+      "correct_answer": "615",
+      "num_samples": 10,
+      "num_correct": 0,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 9533.2,
+      "mean_reflection_count": 28.7
+    },
+    {
+      "problem_id": "hard_04",
+      "difficulty": "hard",
+      "question": "Find the number of positive integers $n \\le 1000$ such that $15n$ is a perfect square.",
+      "correct_answer": "8",
+      "num_samples": 10,
+      "num_correct": 1,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 11100.9,
+      "mean_reflection_count": 44.5
+    },
+    {
+      "problem_id": "hard_05",
+      "difficulty": "hard",
+      "question": "Let $f(x) = x^3 - 3x + 1$. Find the number of real roots of $f(x) = 0$.",
+      "correct_answer": "3",
+      "num_samples": 10,
+      "num_correct": 9,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 9944.4,
+      "mean_reflection_count": 20.1
+    },
+    {
+      "problem_id": "hard_06",
+      "difficulty": "hard",
+      "question": "Determine the number of ordered pairs of positive integers $(a, b)$ with $a + b \\le 100$ such that $\\frac{a}{b}$ is a positive integer.",
+      "correct_answer": "187",
+      "num_samples": 10,
+      "num_correct": 0,
+      "num_with_reflection": 10,
+      "transition_counts": {
+        "reflection_no_prior_answer": 10
+      },
+      "mean_think_length": 10910.6,
+      "mean_reflection_count": 41.1
+    }
+  ]
+}

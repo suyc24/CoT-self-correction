@@ -1,0 +1,7 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "layer": -2,
+  "certain_count": 0,
+  "hesitant_count": 20,
+  "timestamp": "2026-06-26 23:16:42"
+}

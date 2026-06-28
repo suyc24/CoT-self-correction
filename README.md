@@ -2,15 +2,52 @@
 
 This repository contains tools to analyze self-correction behavior in Qwen CoT continuation by ablating attention heads one by one.
 
+It now also includes a modular CoT research framework under `cot_research/` for systematic experiments on internal reasoning inside `<think>...</think>`.
+
 Main entry script:
 - `find_wait_head.py`
 
 Main modules:
-- `find_wait_head_lib/ablation.py`: head hook and head enumeration
-- `find_wait_head_lib/pipeline.py`: stage1->tamper->analysis pipeline
-- `find_wait_head_lib/model_utils.py`: model loading and generation
-- `find_wait_head_lib/parallel_utils.py`: multi-GPU worker logic
-- `find_wait_head_lib/io_utils.py`: dataset IO and summary/statistics writing
+- `cot_research/head_ablation.py`: head hook and head enumeration for ablation experiments
+- `cot_research/self_correction.py`: stage1->tamper->analysis pipeline for self-correction experiments
+- `cot_research/model_utils.py`: model loading and generation helpers for the self-correction pipeline
+- `cot_research/self_correction_parallel.py`: multi-GPU worker logic for self-correction ablations
+- `cot_research/self_correction_io.py`: dataset IO and summary/statistics writing for self-correction runs
+
+Modular framework:
+- `cot_research/generation.py`: backend abstraction for HF and mock backends, stage1/full/continuation generation
+- `cot_research/cot_editing.py`: registered think-edit strategies
+- `cot_research/head_intervention.py`: registered attention-head interventions
+- `cot_research/text_analysis.py`: keyword matching and repair-signal analysis
+- `cot_research/token_analysis.py`: string/token occurrence counting and step-score extraction
+- `cot_research/experiment_runner.py`: config-driven experiment runner
+- `cot_research/summarize_results.py`: post-run aggregation
+
+## Modular CoT Framework
+
+Run the smoke test:
+
+```bash
+python -m cot_research.experiment_runner --config configs/cot_smoke_mock.json
+```
+
+Run a baseline HF experiment:
+
+```bash
+python -m cot_research.experiment_runner --config configs/cot_baseline_qwen_math.json
+```
+
+Run tamper + head ablation + keyword/token analysis:
+
+```bash
+python -m cot_research.experiment_runner --config configs/cot_tamper_ablate_analysis_qwen_math.json
+```
+
+Summarize an existing `rows.jsonl`:
+
+```bash
+python -m cot_research.summarize_results --input outputs/cot_research_tamper_ablate/rows.jsonl
+```
 
 ## 1) Environment Setup
 

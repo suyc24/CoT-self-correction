@@ -1,0 +1,45 @@
+Loading Experiment 1 data...
+Loaded 200 traces
+Found 0 certain cases, 200 hesitant cases
+WARNING: Not enough cases (certain=0, hesitant=20)
+Relaxing criteria...
+Using 0 certain, 20 hesitant cases
+Loading model Qwen/Qwen3-4B ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:00<04:37,  1.43it/s]Loading weights:   6%|▌         | 22/398 [00:00<00:10, 36.68it/s]Loading weights:   9%|▉         | 35/398 [00:00<00:06, 53.80it/s]Loading weights:  12%|█▏        | 48/398 [00:01<00:06, 54.95it/s]Loading weights:  15%|█▍        | 58/398 [00:01<00:06, 55.35it/s]Loading weights:  17%|█▋        | 69/398 [00:01<00:05, 64.73it/s]Loading weights:  20%|██        | 80/398 [00:01<00:05, 63.27it/s]Loading weights:  23%|██▎       | 91/398 [00:01<00:04, 69.60it/s]Loading weights:  26%|██▌       | 102/398 [00:01<00:03, 76.00it/s]Loading weights:  28%|██▊       | 113/398 [00:02<00:03, 71.53it/s]Loading weights:  31%|███       | 124/398 [00:02<00:04, 66.06it/s]Loading weights:  34%|███▍      | 135/398 [00:02<00:03, 73.64it/s]Loading weights:  37%|███▋      | 146/398 [00:02<00:03, 67.87it/s]Loading weights:  39%|███▊      | 154/398 [00:02<00:04, 60.20it/s]Loading weights:  42%|████▏     | 168/398 [00:02<00:03, 61.56it/s]Loading weights:  45%|████▌     | 180/398 [00:03<00:03, 70.84it/s]Loading weights:  48%|████▊     | 190/398 [00:03<00:03, 65.58it/s]Loading weights:  51%|█████     | 201/398 [00:03<00:02, 73.31it/s]Loading weights:  53%|█████▎    | 212/398 [00:03<00:02, 67.78it/s]Loading weights:  56%|█████▌    | 223/398 [00:03<00:02, 72.76it/s]Loading weights:  59%|█████▉    | 234/398 [00:03<00:02, 68.77it/s]Loading weights:  62%|██████▏   | 245/398 [00:04<00:02, 65.10it/s]Loading weights:  64%|██████▍   | 256/398 [00:04<00:02, 62.87it/s]Loading weights:  67%|██████▋   | 267/398 [00:04<00:01, 66.37it/s]Loading weights:  70%|██████▉   | 278/398 [00:04<00:01, 65.58it/s]Loading weights:  73%|███████▎  | 289/398 [00:04<00:01, 61.00it/s]Loading weights:  76%|███████▌  | 301/398 [00:04<00:01, 70.98it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 65.46it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 62.12it/s]Loading weights:  84%|████████▎ | 333/398 [00:05<00:00, 67.78it/s]Loading weights:  86%|████████▋ | 344/398 [00:05<00:00, 65.21it/s]Loading weights:  89%|████████▉ | 356/398 [00:05<00:00, 74.07it/s]Loading weights:  92%|█████████▏| 366/398 [00:05<00:00, 70.10it/s]Loading weights:  94%|█████████▍| 374/398 [00:05<00:00, 70.82it/s]Loading weights:  96%|█████████▌| 382/398 [00:06<00:00, 70.32it/s]Loading weights:  98%|█████████▊| 390/398 [00:06<00:00, 57.80it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 63.78it/s]
+Extracting hidden states for certain cases...
+Extracting hidden states for hesitant cases...
+  [hesitant] 1/20: easy_01#0
+  [hesitant] 2/20: easy_01#1
+  [hesitant] 3/20: easy_01#2
+  [hesitant] 4/20: easy_01#3
+  [hesitant] 5/20: easy_01#4
+  [hesitant] 6/20: easy_01#5
+  [hesitant] 7/20: easy_01#6
+  [hesitant] 8/20: easy_01#7
+  [hesitant] 9/20: easy_01#8
+  [hesitant] 10/20: easy_01#9
+  [hesitant] 11/20: easy_02#0
+  [hesitant] 12/20: easy_02#1
+  [hesitant] 13/20: easy_02#2
+  [hesitant] 14/20: easy_02#3
+  [hesitant] 15/20: easy_02#4
+  [hesitant] 16/20: easy_02#5
+  [hesitant] 17/20: easy_02#6
+  [hesitant] 18/20: easy_02#7
+  [hesitant] 19/20: easy_02#8
+  [hesitant] 20/20: easy_02#9
+Total collected: 20
+Running PCA/UMAP...
+PCA/UMAP input: (80, 2560)
+PCA explained variance: 0.125, 0.081, 0.050
+Saved PCA plot to outputs/reasoning_exploration_20260626_224552/exp3_hidden_states/pca_visualization.png
+Saved trajectory plot
+/root/miniconda3/lib/python3.12/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/root/miniconda3/lib/python3.12/site-packages/numba/np/ufunc/parallel.py:373: NumbaWarning: The TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION >= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.
+  warnings.warn(problem)
+Saved UMAP plot
+
+Results saved to outputs/reasoning_exploration_20260626_224552/exp3_hidden_states

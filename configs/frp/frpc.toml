@@ -1,0 +1,12 @@
+serverAddr = "CHANGE_ME_TO_VPS_IP"
+serverPort = 7000
+
+auth.method = "token"
+auth.token = "CHANGE_ME_TO_A_RANDOM_STRING"
+
+[[proxies]]
+name = "gpu-ssh"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 6022

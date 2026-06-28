@@ -1,0 +1,7 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "num_perturb_tokens": 4,
+  "max_tokens": 4096,
+  "num_problems": 5,
+  "timestamp": "2026-06-26 23:15:41"
+}

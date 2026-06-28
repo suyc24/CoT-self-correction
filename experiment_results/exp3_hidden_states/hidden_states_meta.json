@@ -1,0 +1,182 @@
+[
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 9,
+    "think_length": 5045,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 2,
+    "think_length": 1267,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 4,
+    "think_length": 1405,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 3,
+    "think_length": 923,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 6,
+    "think_length": 2470,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 4,
+    "think_length": 1304,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 3,
+    "think_length": 1296,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 4,
+    "think_length": 1497,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_01",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 4,
+    "think_length": 1220,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 0,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 10,
+    "think_length": 3448,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 1,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 5,
+    "think_length": 2364,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 2,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 6,
+    "think_length": 3351,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 3,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 7,
+    "think_length": 3500,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 4,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 8,
+    "think_length": 2537,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 5,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 10,
+    "think_length": 3026,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 6,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 5,
+    "think_length": 2595,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 7,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 13,
+    "think_length": 3553,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 8,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 9,
+    "think_length": 3433,
+    "final_correct": true
+  },
+  {
+    "problem_id": "easy_02",
+    "sample_idx": 9,
+    "label": "hesitant",
+    "difficulty": "easy",
+    "reflection_count": 6,
+    "think_length": 3381,
+    "final_correct": true
+  }
+]

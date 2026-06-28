@@ -1,0 +1,60 @@
+{
+  "output_dir": "outputs/cot_research_tamper_ablate",
+  "backend": {
+    "type": "hf",
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "device_map": "auto",
+    "load_in_half": true,
+    "use_fast_tokenizer": false,
+    "use_safetensors": true,
+    "local_files_only": true
+  },
+  "dataset": {
+    "path": "evaluation/data/self_correction_ablation/test_questions.jsonl",
+    "max_examples": 4
+  },
+  "generation": {
+    "system_prompt": "Please reason step by step in <think>...</think>. Before closing </think>, include your interim result in \\boxed{}.",
+    "assistant_prefix": "<think>\n",
+    "stage1_stop_string": "</think>",
+    "max_stage1_tokens": 2048,
+    "max_new_tokens": 1024,
+    "do_sample": false,
+    "capture_step_scores": true
+  },
+  "editing_plan": [
+    {
+      "name": "auto_tamper_answer",
+      "params": {
+        "correct_answer": "{correct_answer}",
+        "replacement_text": "{wrong_answer}"
+      }
+    }
+  ],
+  "analysis": {
+    "keywords": ["wait", "no", "actually", "however", "mistake", "incorrect", "等一下", "不对", "重新检查", "重算"],
+    "repair_lexicon": ["wait", "no", "actually", "however", "mistake", "incorrect", "等一下", "不对", "重新检查", "重算"],
+    "tracked_strings": ["Wait", "No", "Actually", "不对", "</think>"],
+    "next_token_candidates": ["Wait", "No", "Actually"]
+  },
+  "interventions": [
+    {
+      "name": "zero",
+      "label": "zero[L0H22]",
+      "heads": ["L0H22"]
+    },
+    {
+      "name": "scale",
+      "label": "scale0.25[L0H22]",
+      "heads": ["L0H22"],
+      "params": {
+        "scale": 0.25
+      }
+    },
+    {
+      "name": "zero",
+      "label": "zero[L0H22,L0H23]",
+      "heads": ["L0H22", "L0H23"]
+    }
+  ]
+}

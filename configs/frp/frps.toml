@@ -1,0 +1,4 @@
+bindPort = 7000
+
+auth.method = "token"
+auth.token = "CHANGE_ME_TO_A_RANDOM_STRING"
